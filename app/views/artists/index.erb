@@ -1,1 +1,6 @@
 LIST OF ARTISTS
+<a href="/artists/new">Create a new artist</a>
+<% @artists.each do |artist| %>
+    <a href="artists/<%= artist.id %>"><%= artist.name %></a><br>
+
+<% end %>

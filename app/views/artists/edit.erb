@@ -2,6 +2,14 @@
 <input type="hidden" name="_method" value="put">
 <label for="artist_name">Artist Name: </label>
 <input type="text" id="artist_name" name="artist[name]" value="<%= @artist.name %>"><br>
+<% Song.all.each do |song| %>
+    <input type="checkbox" 
+           value="<%= song.id %>" 
+           name="artist[song_ids][]"
+           <%= @artist.songs.include?(song) ? 'checked' : '' %>
+           >
+    <%= song.title %><br>
+<% end %>
 
-<input type="submit" value="edit song">
+<input type="submit" value="Update Artist">
 </form>
