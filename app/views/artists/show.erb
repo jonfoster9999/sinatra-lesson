@@ -1,0 +1,8 @@
+<h4><%= @artist.name.upcase %> - <a href="/artists/<%= @artist.id %>/edit">Edit</a></h4>
+
+<br>
+Songs:
+<% @artist.songs.each do |song| %>
+    <%= song.title %>
+
+<% end %>
